@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.min.js"></script>
+    <title>Vue js</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <button v-on:click="ayirish">Ayirish</button> {{item}}
+            <button v-on:click="qoshish()">Qo'shish</button>
+        </div>
+
+        <div v-if="item<0">
+            hello
+        </div>
+        <div v-else-if="item==0">
+            else if
+        </div>
+        <div v-else="item>0">
+            Hi
+        </div>
+
+        <div>
+            <ul>
+                <li v-for="(item,index) in 5" :key="index">
+                    Tea
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            item: 0
+        },
+        methods: {
+            qoshish() {
+                this.item++
+            },
+            ayirish() {
+                this.item--
+            }
+        }
+    })
+</script>
+
+</html>
